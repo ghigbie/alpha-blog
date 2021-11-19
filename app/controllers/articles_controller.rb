@@ -10,4 +10,13 @@ class ArticlesController < ApplicationController
     def new
     
     end
+
+    def create
+        @article = Article.new(params.require(:article).permit(:title, :description))
+        @article.save
+        # render plain: @article
+        # redirect_to article_path(@article)
+        redirect_to @article
+        # render plain: @article.inspect
+    end
 end
