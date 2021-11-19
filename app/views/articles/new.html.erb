@@ -1,0 +1,15 @@
+<h1>Create a new article</h1>
+
+<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+
+    <%= f.text_field :title %>
+    <%= f.text_area :description %>
+    <%= f.submit %>
+
+<% end %>
+
+
+
+
+
+<p>This form is submitted to the new route, which is created by the create route. The create route has not view associated with it.</p>
